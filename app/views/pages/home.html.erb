@@ -1,0 +1,118 @@
+        <main class="main">
+            <!--=============== HOME ===============-->
+            <section class="home section" id="home">
+                <div class="home__container container grid">
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0250/9779/7729/t/19/assets/Rampage-stealth-2.png?v=41014001996176970981666039374">
+                    </div>
+
+                    <div class="home__data">
+                        <div class="home__header">
+                            <h1 class="home__title">Share</h1>
+                            <h2 class="home__subtitle">Gaming Gear</h2>
+                        </div>
+
+                        <div class="home__footer">
+                            <h3 class="home__title-description">Level up your game!</h3>
+                            <p class="home__description">Gamify is a unlocks the power of lending games and consoles marketplace app. Access our vast librar conveniently, while trading with fellow gamers.
+                            </p>
+                            <%= link_to products_path , class: "button button--flex" do %>
+                              <span class="button--flex">
+                                  <i class="ri-shopping-bag-line button__icon"></i> See Listings
+                              </span>
+                              <% end %>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--=============== SPONSOR ===============-->
+            <section class="sponsor section">
+            <section class="products section" id="products">
+            <h2 class="section__title section__title-gradient products__line">
+                    Sponsors
+                </h2>
+                </section>
+                <div class="sponsor__container container grid">
+
+                    <a href="https://apple.com" target="_blank"><img src="https://i.imgur.com/3XIyl0y.png" alt="Apple Sponsor" class="sponsor__img"></a>
+                    <a href="https://lewagon.com" target="_blank"><img src="https://i.imgur.com/bOx3906.png" alt="Le Wagon Sponsor" class="sponsor__img"></a>
+                    <a href="https://twitch.tv" target="_blank"><img src="https://i.imgur.com/4EjGiju.png" alt="Twitch Sponsor" class="sponsor__img"></a>
+                    <a href="https://github.com" target="_blank"><img src="https://i.imgur.com/1Amfqsy.png" alt="Github Sponsor" class="sponsor__img"></a>
+                    <a href="https://youtube.com" target="_blank"><img src="https://i.imgur.com/yQd1kf9.png" alt="Youtube Sponsor" class="sponsor__img"></a>
+                </div>
+            </section>
+
+            <!--=============== CASE ===============-->
+
+            <!--=============== DISCOUNT ===============-->
+            <section class="discount section" id="Signin">
+                <div class="discount__container container grid">
+                    <div class="discount__animate">
+                        <h2 class="discount__title">Immerse yourself in <br> the world of gaming</h2>
+                        <p class="discount__description">Share the fun, lend and borrow your favorite games</p>
+                        <%= link_to  new_user_registration_path , class: "button button--flex"  do %>
+                            <i class="ri-shopping-bag-line button__icon"></i> Sign up
+                        <% end %>
+                    </div>
+
+                    <img src="https://gmedia.playstation.com/is/image/SIEPDC/PSVR2-thumbnail-01-en-22feb22?$facebook$" alt="" class="discount__img">
+                </div>
+            </section>
+
+
+
+
+            <!--=============== PRODUCTS ===============-->
+          <div class="product-section">
+            <div class="search-section">
+
+            </div>
+            <section class="products section" id="products">
+                <h2 class="section__title section__title-gradient products__line">
+                    Step up <br> your Game
+                </h2>
+                <div class="footer__content" id="searchbar">
+                  <%= form_tag products_path, :method => 'get', class: "footer__form" do %>
+                    <%= text_field_tag :search, params[:search], class: "footer__input", placeholder: "  Search Products" %>
+                    <%= submit_tag "Search", class: 'button button--flex' %>
+                  <% end %>
+                <div class="products__container container grid">
+                    <% @products[0...9].each do |product| %>
+                      <article class="products__card">
+                        <div class="products__content">
+                          <%= link_to product_path(product) do %>
+                            <%= cl_image_tag product.photo.key, width: 400, height: 300,crop: :pad, class:"card-img-top; products__img", alt:"Product image", id: "user_prodc" %>
+                          <% end %>
+                          <h3 class="products__title"><%= product.name %></h3>
+                          <span class="products__price"><%= number_to_currency(product.price) %></span>
+                          <button class="button button--flex products__button">
+                            <i class="ri-shopping-bag-line button__icon"></i>
+                          </button>
+                        </div>
+                      </article>
+                    <% end %>
+                </div>
+                <div class= "load-more mt-4">
+                  <%= link_to "Load more", products_path , class: "btn loadbtn btn-lg button button--flex" %>
+                </div>
+            </section>
+          </div>
+
+        </main>
+
+        <!--=============== SCROLL UP ===============-->
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class="ri-arrow-up-s-line scrollup__icon"></i>
+        </a>
+        <!--=============== SCROLL REVEAL ===============-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <!--=============== MAIN JS ===============-->
+        <script src="assets/js/main.js"></script>
+
+<style>
+.products__container {
+  gap: 6rem 15rem;
+}
+
+</style>

@@ -1,0 +1,64 @@
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="/" class="nav__logo">
+                    <img src="https://i.imgur.com/CnIFUBR.png" alt="Logo">
+                </a>
+    <div class="nav__menu" id="nav-menu">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <%= link_to "New Product", new_product_path, class: "nav__link" %>
+        </li>
+        <li class="nav__item">
+          <%= link_to "Gaming PC's", products_path(product_type: "Gaming PC"), class: "nav__link" %>
+        </li>
+        <li class="nav__item">
+          <%= link_to "Consoles", products_path(product_type: "Consoles"), class: "nav__link" %>
+        </li>
+        <li class="nav__item">
+          <%= link_to "Games", products_path(product_type: "Games"), class: "nav__link" %>
+        </li>
+        <% if user_signed_in? %>
+          <li class="nav__item dropdown">
+            <% if current_user.photo.attached? %>
+            <%= cl_image_tag current_user.photo.key, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <style>
+            .avatar {
+              height: 70px;
+              width: 70px;
+              object-fit: cover;
+            }
+            </style>
+            <% else %>
+             <%= image_tag "https://st.depositphotos.com/2218212/2938/i/600/depositphotos_29387653-stock-photo-facebook-profile.jpg", crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+             <style>
+            .avatar {
+              height: 70px;
+              width: 70px;
+              object-fit: cover;
+            }
+            </style>
+            <% end %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Profile", user_path(current_user), class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          </li>
+        <% end %>
+      </ul>
+                          <div class="nav__close" id="nav-close">
+                        <i class="ri-close-line"></i>
+                    </div>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-function-line"></i>
+                </div>
+            </nav>
+        </header>
+    </div>
+  </div>
+</nav>
