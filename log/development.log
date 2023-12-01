@@ -790,3 +790,134 @@ ActionView::Template::Error (Error: File to import not found or unreadable: boot
   
 app/assets/stylesheets/application.scss:7
 app/views/layouts/application.html.erb:10
+Started GET "/" for ::1 at 2023-12-01 15:44:13 +0000
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/pages/home.html.erb:76
+  Rendered pages/home.html.erb within layouts/application (Duration: 24.9ms | Allocations: 3986)
+  Rendered layout layouts/application.html.erb (Duration: 42.3ms | Allocations: 11477)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 9.6ms | Allocations: 11752)
+
+
+  
+ActionView::Template::Error (Error: File to import not found or unreadable: bootstrap/scss/bootstrap.
+        on line 7:1 of app/assets/stylesheets/application.scss
+>> @import "bootstrap/scss/bootstrap";
+
+   ^
+):
+     7:     <%= csp_meta_tag %>
+     8:     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+     9: 
+    10:     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    11:     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    12:   </head>
+    13: 
+  
+app/assets/stylesheets/application.scss:7
+app/views/layouts/application.html.erb:10
+Started GET "/" for ::1 at 2023-12-01 15:46:30 +0000
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/pages/home.html.erb:76
+  Rendered pages/home.html.erb within layouts/application (Duration: 4.7ms | Allocations: 852)
+  Rendered shared/_navbar.html.erb (Duration: 6.5ms | Allocations: 993)
+  Rendered shared/_flashes.html.erb (Duration: 0.9ms | Allocations: 212)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 253)
+  Rendered layout layouts/application.html.erb (Duration: 4656.3ms | Allocations: 156171)
+Completed 200 OK in 4657ms (Views: 4656.4ms | ActiveRecord: 0.5ms | Allocations: 156479)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/js/main.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/img/gamydf-01.png"):
+  
+Started GET "/products" for ::1 at 2023-12-01 15:46:42 +0000
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:21
+  Rendered products/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1323)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 398)
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 35)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 9287)
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.4ms | Allocations: 10127)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/img/gamydf-01.png"):
+  
+Started GET "/products/new" for ::1 at 2023-12-01 15:46:48 +0000
+Processing by ProductsController#new as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 271)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-12-01 15:46:48 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 94.1ms | Allocations: 13539)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 377)
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 43)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 106.2ms | Allocations: 21295)
+Completed 200 OK in 136ms (Views: 108.5ms | ActiveRecord: 10.8ms | Allocations: 30283)
+
+
+Started GET "/products/assets/img/gamydf-01.png" for ::1 at 2023-12-01 15:46:48 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/products/assets/img/gamydf-01.png"):
+  
+Started GET "/products/assets/img/dogs/image3.jpeg" for ::1 at 2023-12-01 15:46:48 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/products/assets/img/dogs/image3.jpeg"):
+  
+Started GET "/" for ::1 at 2023-12-01 15:46:49 +0000
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/pages/home.html.erb:76
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.7ms | Allocations: 912)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 344)
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 22.0ms | Allocations: 8807)
+Completed 200 OK in 24ms (Views: 22.8ms | ActiveRecord: 0.4ms | Allocations: 9098)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/js/main.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/img/gamydf-01.png"):
+  
+Started GET "/" for ::1 at 2023-12-01 15:48:39 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/pages/home.html.erb:76
+  Rendered pages/home.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2018)
+  Rendered shared/_navbar.html.erb (Duration: 5.6ms | Allocations: 1003)
+  Rendered shared/_flashes.html.erb (Duration: 0.8ms | Allocations: 212)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 253)
+  Rendered layout layouts/application.html.erb (Duration: 3999.3ms | Allocations: 162241)
+Completed 200 OK in 4022ms (Views: 4004.0ms | ActiveRecord: 0.8ms | Allocations: 168386)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/js/main.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/img/gamydf-01.png"):
+  
